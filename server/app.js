@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const app = express();
 
 dotenv.config({path:'./config.env'});
-require("./DB/connection");
+require("./db/connection");
 
 const User = require("./model/userSchema");
 const Todo = require("./model/todoSchema");
