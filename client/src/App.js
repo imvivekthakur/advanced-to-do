@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import About from './Components/About'
