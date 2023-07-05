@@ -1,3 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "https://advanced-to-do-backend.onrender.com"
+  status = 200
+  force = true
