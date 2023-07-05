@@ -6,7 +6,7 @@ const Signout = () => {
   useEffect(() => {
     const callSignoutPage = async () => {
       try {
-        const res = await fetch("/signout", {
+        const res = await fetch("/api/signout", {
           method: "GET",
           headers: {
             Accept: "application/json",

@@ -8,7 +8,7 @@ const Contact = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const res = await fetch("/getdata", {
+        const res = await fetch("/api/getdata", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -40,7 +40,7 @@ const Contact = () => {
   const handleSubmit = async (e) =>  {
     e.preventDefault();
 
-    const res = await fetch("/contact", {
+    const res = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -11,7 +11,7 @@ const Signin = () => {
   const loginUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/signin", {
+    const res = await fetch("/api/signin", {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'

@@ -1,5 +1,9 @@
 [[redirects]]
   from = "/*"
-  to = "https://advanced-to-do-backend.onrender.com/:splat"
+  to = "/index.html"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://advanced-to-do-backend.onrender.com/api/:splat"
+  status = 200

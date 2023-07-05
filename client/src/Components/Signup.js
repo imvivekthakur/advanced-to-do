@@ -18,7 +18,7 @@ const Signup = () => {
   const PostData = async (e) => {
     e.preventDefault();
     // using async await
-    const res = await fetch("/signup", {
+    const res = await fetch("/api/signup", {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'

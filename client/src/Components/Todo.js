@@ -17,7 +17,7 @@ const Todo = ( {currentCategory} ) => {
     useEffect(() => {
       const getTodos = async () => {
         try {
-            const res = await fetch("/gettodo", {
+            const res = await fetch("/api/gettodo", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -50,7 +50,7 @@ const Todo = ( {currentCategory} ) => {
         e.preventDefault();
         // console.log("current active category", currentCategory);
         // string jayegi server pe = todo string
-        const res = await fetch("/add", {
+        const res = await fetch("/api/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -70,7 +70,7 @@ const Todo = ( {currentCategory} ) => {
         // console.log("new Task array", newTask);
     }
     const handleUpdate = async (id) => {
-        const res = await fetch("/update", {
+        const res = await fetch("/api/update", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -85,7 +85,7 @@ const Todo = ( {currentCategory} ) => {
         setTask([...array]);
     }
     const handleDelete = async (id) => {
-        const res = await fetch("/delete", {
+        const res = await fetch("/api/delete", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -119,7 +119,7 @@ const Todo = ( {currentCategory} ) => {
     const strikethrough = async (e, id) => {
         // console.log("taskObject id", id);
         e.currentTarget.classList.toggle('strikethrough');
-        const res = await fetch("/change", {
+        const res = await fetch("/api/change", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -21,7 +21,7 @@ const Navbar = ({onChildCategory}) => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-          const res = await fetch("/getcategories", {
+          const res = await fetch("/api/getcategories", {
               method: "GET",
               headers: {
                   "Content-Type": "application/json"
@@ -50,7 +50,7 @@ const Navbar = ({onChildCategory}) => {
     const initialize = async () => {
       const data = "temp";
       try {
-          const res = await fetch("/initializeuser", {
+          const res = await fetch("/api/initializeuser", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -79,7 +79,7 @@ const Navbar = ({onChildCategory}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/addcategory", {
+    const res = await fetch("/api/addcategory", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -117,7 +117,7 @@ const Navbar = ({onChildCategory}) => {
   useEffect(() => {
     const userHomePage = async () => {
       try {
-        const res = await fetch("/getdata", {
+        const res = await fetch("/api/getdata", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
