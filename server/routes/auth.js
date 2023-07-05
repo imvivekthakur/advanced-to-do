@@ -31,7 +31,7 @@ async function addInitialCategories(userId) {
 }
   
   // Example usage within a route handler
-router.post("/initializeuser", authenticate, async (req, res) => {
+router.post("/api/initializeuser", authenticate, async (req, res) => {
     try {
         console.log("initialize user called");
         const userId = req.userId;
@@ -49,13 +49,13 @@ router.post("/initializeuser", authenticate, async (req, res) => {
 });
   
 
-router.get("/", (req, res) => {
+router.get("/api/", (req, res) => {
     console.log("Hello world from Router.js");
     res.send("<h1>hello world</h1>");
 });
 
 // using async await
-router.post("/signup", async (req, res) => {
+router.post("/api/signup", async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
     if(!name || !email || !phone || !password || !cpassword) {
         return res.status(422).json({error : "Please fill all the required fields"});
@@ -76,7 +76,7 @@ router.post("/signup", async (req, res) => {
 });
 
 // sign in route
-router.post("/signin", async (req, res) => {
+router.post("/api/signin", async (req, res) => {
     // authenticating user
     // console.log(req);
     try {
@@ -110,15 +110,15 @@ router.post("/signin", async (req, res) => {
 });
 
 
-router.get("/about", authenticate, (req, res) => {
+router.get("/api/about", authenticate, (req, res) => {
     res.send(req.userData);
 });
 
-router.get("/getData", authenticate, (req, res) => {
+router.get("/api/getData", authenticate, (req, res) => {
     res.send(req.userData);
 });
 
-router.post("/contact", authenticate, async (req, res) => {
+router.post("/api/contact", authenticate, async (req, res) => {
     try {
         const {name, email, message} = req.body.userData;
         console.log("request in contact", req);
@@ -140,7 +140,7 @@ router.post("/contact", authenticate, async (req, res) => {
     }
 });
 
-router.post("/addcategory", authenticate, async(req, res) => {
+router.post("/api/addcategory", authenticate, async(req, res) => {
     try {
         const category = req.body.input;
         console.log("request body", req.body);
@@ -168,24 +168,24 @@ router.post("/addcategory", authenticate, async(req, res) => {
     }
 })
 
-router.get("/signout", (req, res) => {
+router.get("/api/signout", (req, res) => {
     // console.log("signout page");
     res.clearCookie('jwtoken', {path: "/"});
     res.status(200).send("User logged out");
 });
 
-router.get("/gettodo", authenticate, async (req, res) => {
+router.get("/api/gettodo", authenticate, async (req, res) => {
     // console.log("request from gettodo", req);
     let userTodos = await Todo.findOne({user_id : req.userId});
     res.send(userTodos);
 })
 
-router.get("/getcategories", authenticate, async(req, res) => {
+router.get("/api/getcategories", authenticate, async(req, res) => {
     let userData = await User.findOne({_id : req.userId});
     res.send(userData.categories);
 })
 
-router.post("/add", authenticate, async (req, res) => {
+router.post("/api/add", authenticate, async (req, res) => {
     try {
         const todo = req.body.input;
         const category = req.body.currentCategory;
@@ -215,7 +215,7 @@ router.post("/add", authenticate, async (req, res) => {
     }
 });
 
-router.post("/delete", authenticate, async (req, res) => {
+router.post("/api/delete", authenticate, async (req, res) => {
     try {
         let deletedTodos = await Todo.updateOne(
             {user_id : req.userId},
@@ -231,7 +231,7 @@ router.post("/delete", authenticate, async (req, res) => {
     }
 });
 
-router.post("/update", authenticate, async (req, res) => {
+router.post("/api/update", authenticate, async (req, res) => {
     try {
         // const todoData = Todo.todos.filter()
         let userTodos = await Todo.findOne({user_id : req.userId});
@@ -249,7 +249,7 @@ router.post("/update", authenticate, async (req, res) => {
     }
 });
 
-router.post("/change", authenticate, async(req,res) => {
+router.post("/api/change", authenticate, async(req,res) => {
     try {
         // console.log(req.body);
         let userTodos = await Todo.findOne({user_id : req.userId});

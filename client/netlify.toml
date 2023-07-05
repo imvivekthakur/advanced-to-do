@@ -2,7 +2,6 @@
   from = "/api/*"
   to = "https://advanced-to-do-backend.onrender.com/api/:splat"
   status = 200
-  force = true
   
 [[redirects]]
   from = "/*"
