@@ -162,16 +162,13 @@ const Navbar = ({onChildCategory}) => {
         </nav>
         <div className="wrapper">
               <div className='flex'>
-              <nav id="sidebar" className={sidebarActive ? 'active' : ''}>
-                  {/* <div className="sidebar-header">
-                      <h3>{userName}</h3>
-                  </div> */}
+              <nav id="sidebar" className={sidebarActive ? 'show-sidebar' : ''}>
                   <ul className="list-unstyled components">
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${activeItem === 'Home' ? 'active' : ''}`} onClick={() => handleClick('Home')} to="/">Home</NavLink>
+                            <NavLink className={`nav-link ${activeItem === 'Home' ? 'active-sidebar' : ''}`} onClick={() => handleClick('Home')} to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${activeItem === 'About' ? 'active' : ''}`} onClick={() => handleClick('About')} to="/about">About</NavLink>
+                            <NavLink className={`nav-link ${activeItem === 'About' ? 'active-sidebar' : ''}`} onClick={() => handleClick('About')} to="/about">About</NavLink>
                         </li>
                         
                         <li className="active-item">
@@ -191,18 +188,8 @@ const Navbar = ({onChildCategory}) => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${activeItem === 'Contact' ? 'active' : ''}`} onClick={() => handleClick('Contact')} to="/contact">ContactMe</NavLink>
+                            <NavLink className={`nav-link ${activeItem === 'Contact' ? 'active-sidebar' : ''}`} onClick={() => handleClick('Contact')} to="/contact">ContactMe</NavLink>
                         </li>
-                      {/* <li>
-                          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
-                          <ul className="collapse list-unstyled" id="pageSubmenu">
-                              <li>
-                                  <a href="#">Page 1</a>
-                              </li>
-                              
-                          </ul>
-                      </li> */}
-
                   </ul>
               </nav>
               <div id="content">

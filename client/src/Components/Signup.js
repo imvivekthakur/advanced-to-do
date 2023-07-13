@@ -39,7 +39,7 @@ const Signup = () => {
   return (
     <>
         <div className='page'>
-          <div className="box">
+          <div className="box signup-box">
             <div className='left-box'>
               <div className="container">
                 <h1 className='heading'>Sign Up</h1>
