@@ -47,6 +47,9 @@
   overflow: hidden;
   border-radius: 15px;
 }
+.about-box {
+  height: max-content;
+}
 
 .left-box {
   width: 40%;
@@ -260,6 +263,37 @@
   color: #fff !important;
   border-radius: 0.6rem;
 }
+.update-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem;
+  
+}
+.profile-update-img {
+  margin: 0.7rem;
+}
+.profile-image {
+  width: 100%;
+}
+.profile-input {
+  border: 1px solid black;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.6rem;
+  margin: 0 1rem 0 0;
+  width: 100%;
+}
+
+.profile-text {
+  font-size: 0.7rem;
+  margin: 0.4rem;
+}
+.profile-img-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 1000px) {
   .right-box {
@@ -292,9 +326,8 @@
     margin: 0 auto;
   }
   .about-box {
-    display: block;
-    margin: 0 auto;
-    height: 70%;
+    padding-top: 1rem;
+    margin-top: 170px;
   }
   .home-box {
     width: 80%;
